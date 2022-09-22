@@ -7,6 +7,6 @@ Integrantes:
   <li>Alan Salvador Chilpa Navarro</li>
   <li>Fabián Josafat Díaz Silleros</li>
 </ul>
-</br>
+</b>
 
 Fecha de entrega: 13 de Octubre de 2022
