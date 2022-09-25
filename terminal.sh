@@ -1,5 +1,34 @@
 #!/bin/bash
 
+#Inicio de sesion
+echo -n "Ingrese su usuario pa: "
+read c_usuario #Leemos usuario
+
+cu=$(grep "$c_usuario" /etc/passwd) # Buscamos si existe
+
+if [[ $? -eq 0 ]] ; then # Si no dio error
+	echo -n "Ahora deme su contraseña compadre: "
+	read -s contra # Leemos contraseña en secreto
+	echo "$contra" > doc # Mandamos a un archivo la contra
+	cat doc | su - "$c_usuario" 2>doc2
+	#le pasamos la contra al switch user y si falla, mandamos el error a doc2
+	if [[ $? -eq 0 ]] ; then # Si si es la contraseña
+		rm doc # Borramos la contra
+		rm do2 # Borramos el pedido de contraseña estandar
+		clear # Limpiamos pantalla
+	else # Si no es la contraseña
+		echo ""
+		echo "Contraseña incorrecta, llamame cuando la recuerdes"
+		rm doc # Borramos la contra
+		rm doc2 # Borramos el error
+		exit # Salimos
+	fi
+
+else # Si no existe el usuario
+	echo "No existes, primero existe y despues hablamos"
+	exit $? # Salimos
+fi
+
 #Bucle infinito para que no salga hasta que se teclee salir
 while true
 do
