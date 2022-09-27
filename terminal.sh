@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# trap para evitar que salga del script con control +z o +c
+trap '' SIGTSTP SIGINT SIGTERM
 #Inicio de sesion
 echo -n "Ingrese su usuario pa: "
 read c_usuario #Leemos usuario
@@ -73,3 +74,7 @@ done
 
 #Nos despedimos antes de salir del programa
 echo "Usted ha salido de la mejor terminal del planeta, nos vemos Bob Esponja"
+
+#Cerramos el trap
+
+trap '' SIGTSTP SIGINT SIGTERM
