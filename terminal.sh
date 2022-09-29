@@ -10,18 +10,12 @@ cu=$(grep "$c_usuario" /etc/passwd) # Buscamos si existe
 if [[ $? -eq 0 ]] ; then # Si no dio error
 	echo -n "Ahora deme su contraseña compadre: "
 	read -s contra # Leemos contraseña en secreto
-	echo "$contra" > doc # Mandamos a un archivo la contra
-	cat doc | su - "$c_usuario" 2>doc2
-	#le pasamos la contra al switch user y si falla, mandamos el error a doc2
+	echo "$contra" | su - "$c_usuario" 2> /dev/null #le pasamos la contra al su y si falla, mandamos el error a dev/null
 	if [[ $? -eq 0 ]] ; then # Si si es la contraseña
-		rm doc # Borramos la contra
-		rm do2 # Borramos el pedido de contraseña estandar
 		clear # Limpiamos pantalla
 	else # Si no es la contraseña
 		echo ""
 		echo "Contraseña incorrecta, llamame cuando la recuerdes"
-		rm doc # Borramos la contra
-		rm doc2 # Borramos el error
 		exit # Salimos
 	fi
 
@@ -43,7 +37,7 @@ opc=()
 	#Switch para determinar si es comando propio o nativo
 	case $opc in
 		"salir") #Caso salir rompe el bucle y sale
-			break 
+			break
 			;;
 		"ayuda") #Muestra los comandos propios y su descrp
 			echo "ayuda"
