@@ -40,7 +40,7 @@ opc=()
 			break
 			;;
 		"ayuda") #Muestra los comandos propios y su descrp
-			echo "ayuda"
+			. ayuda.sh
 			;;
 		"infosis") #Muestra informacion del sistema
 			echo "infosis"
@@ -55,7 +55,7 @@ opc=()
 			echo "creditos"
 			;;
 		"juego") #Despliega un juego
-			echo "jueguito"
+			. ahorcado.sh
 			;;
 		"musica") #Reproductor mp3
 			echo "musica"
