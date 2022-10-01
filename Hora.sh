@@ -7,7 +7,8 @@ Rojo='\033[31m'
 Hr=$(date +%H) #Variable con la hora actual
 Min=$(date +%M) #Variable con el minuto actual
 Seg=$(date +%S) #Variable con el segundo actual
+Fecha=$(date +%F)
 
 #Muestra de la hora al Usuario
 printf "$Rojo"
-echo "La hora del sistema es $Hr:$Min:$Seg"
+echo "La hora del sistema es: $Fecha $Hr:$Min:$Seg"
