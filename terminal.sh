@@ -46,13 +46,13 @@ opc=()
 			echo "infosis"
 			;;
 		"fecha") #Nos da la fecha y hora
-			echo "fecha y hora"
+			. Hora.sh
 			;;
 		"buscar") #Busca un archivo en un directorio
 			echo "buscar"
 			;;
 		"creditos") #Muestra los creditos de los programadores
-			echo "creditos"
+			. creditos.sh
 			;;
 		"juego") #Despliega un juego
 			. ahorcado.sh
