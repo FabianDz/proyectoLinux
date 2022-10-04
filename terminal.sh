@@ -24,6 +24,9 @@ else # Si no existe el usuario
 	exit $? # Salimos
 fi
 
+# Guardamos la direccion absoluta original en una variable
+diror=$(pwd)
+
 #Bucle infinito para que no salga hasta que se teclee salir
 while true
 do
@@ -40,24 +43,31 @@ opc=()
 			break
 			;;
 		"ayuda") #Muestra los comandos propios y su descrp
-			. ayuda.sh
+			#Usamos diror para ejecutar sin importar donde estemos
+			. "$diror/"ayuda.sh
 			;;
 		"infosis") #Muestra informacion del sistema
+			#Usamos diror para ejecutar sin importar donde estemos
 			echo "infosis"
 			;;
 		"fecha") #Nos da la fecha y hora
-			. Hora.sh
+			#Usamos diror para ejecutar sin importar donde estemos
+			. "$diror/"Hora.sh
 			;;
 		"buscar") #Busca un archivo en un directorio
+			#Usamos diror para ejecutar sin importar donde estemos
 			echo "buscar"
 			;;
 		"creditos") #Muestra los creditos de los programadores
-			. creditos.sh
+			#Usamos diror para ejecutar sin importar donde estemos
+			. "$diror/"creditos.sh
 			;;
 		"juego") #Despliega un juego
-			. ahorcado.sh
+			#Usamos diror para ejecutar sin importar donde estemos
+			. "$diror/"ahorcado.sh
 			;;
 		"musica") #Reproductor mp3
+			#Usamos diror para ejecutar sin importar donde estemos
 			echo "musica"
 			;;
 		*) #Cualquier otra cosa o comando de Linux
