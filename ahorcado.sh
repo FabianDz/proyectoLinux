@@ -73,7 +73,7 @@ error=0
 unset sust #unset lo utilizo para borrar lo que almacena la variable cuando se repite el ciclo y no tener las mismas letras que en eljuego pasado
 unset a
 unset palabra
-echo "Que quieres hacer? "
+echo "Hola, bienvenido a nuestro juego, a continuacion ingresa la opcion que deseas hacer"
 echo "1)Jugar"
 echo "2)salir"
     read opc #Es para repetir el ciclo las veces que el usuario quiera
