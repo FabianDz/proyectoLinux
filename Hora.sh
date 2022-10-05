@@ -5,7 +5,8 @@ Rojo='\033[31m'
 
 
 
-
+#Sincronizando el reloj RTC con el reloj local
+timedatectl set-local-rtc 1
 
 #Muestra la  fecha y hora actuales
 printf "$Rojo"
