@@ -48,15 +48,15 @@ opc=()
 			;;
 		"infosis") #Muestra informacion del sistema
 			#Usamos diror para ejecutar sin importar donde estemos
-			echo "infosis"
+			. "$diror/"infosis.sh
 			;;
 		"fecha") #Nos da la fecha y hora
 			#Usamos diror para ejecutar sin importar donde estemos
 			. "$diror/"Hora.sh
 			;;
-		"buscar") #Busca un archivo en un directorio
+		"search") #Busca un archivo en un directorio
 			#Usamos diror para ejecutar sin importar donde estemos
-			echo "buscar"
+			. "$diror/"search.sh
 			;;
 		"creditos") #Muestra los creditos de los programadores
 			#Usamos diror para ejecutar sin importar donde estemos
