@@ -66,6 +66,7 @@
 clear
 opc=0
 salida=2
+echo "----------------------AHORCADO----------------------"
 while [ "$opc" != "$salida" ]
 do
 dibujo=3
@@ -81,7 +82,8 @@ echo "2)salir"
     
         1)
         clear
-        echo -n "¿Qué palabra vamos a adivinar?: "
+        echo "NOTA: Recuerda que no son iguales las minusculas y las mayusculas"
+        echo "¿Qué palabra quieres que adivinen?: "
         read secreto                                 #Aquí se va a leer la palabra que nosotros intetaremos adivinar
         clear
         sust="-"
@@ -98,8 +100,7 @@ echo "2)salir"
 		read sust #En esta parte es donde leemos la letra que ingresa el usuario para adivinar la palabra
          	a=${a}$sust
          	palabra=${sust}$palabra    #Lo que hicimos aquí es concatenar las letras ingresadas	
-         	echo "$palabra"
-		existe=`echo ${secreto} | grep ${sust}` #Hacemos la comparacion en donde si no es igual no aparece nada
+		existe=`echo $secreto | grep $sust` #Hacemos la comparacion en donde si no es igual no aparece nada
 		if [ "$existe" = "" ]
 		then
                 	echo "Bro creo que la letra $sust no aparece en la palabra" #La frase aparece cuando la letra que ingresamos no esta en la palabra secreta 
@@ -117,9 +118,9 @@ echo "2)salir"
 
 			 fi
 		else
-			aux=`echo $secreto | sed "s/[^${palabra}]/*"/g` #En esta parte si se acierta con la letra ingresada se sustituira en la palabra oculta
+			aux=`echo $secreto | sed "s/[^${palabra}]/-"/g` #En esta parte si se acierta con la letra ingresada se sustituira en la palabra oculta
 		fi
-			if [ "${aux}" = "${secreto}" ] #Aquí es cuando entra al momento de que le atinen a la palabra
+			if [ "$aux" = "$secreto" ] #Aquí es cuando entra al momento de que le atinen a la palabra
 			then
                         	clear
                                 echo "Le atinaste mi tibio, la palabra era: ${secreto}." #El texto aparece cuando le atinas a la palabra, dandote la palabra secreta
@@ -128,4 +129,5 @@ echo "2)salir"
 			fi
 	done
     esac
+echo "Adios, espero que vuelvas pronto  :(:"
 done
