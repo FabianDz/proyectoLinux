@@ -3,13 +3,10 @@
 # Asignando los colores de los textos que apareceran en el terminal
 namarillo="\e[1;33m"
 original="\e[0m"
-nturquesa="\e[36m"
-rojo="\e[31m"
 nblanco="\e[1;37m"
 
-#Asignando colores de fondo
-bazul="\e[1;44m"
-brojo="\e[4;41m"
+#Asignando color
+
 bnegro="\e[1;40m"
 
 #Verificamos que el paquete mpg123 este instalado
