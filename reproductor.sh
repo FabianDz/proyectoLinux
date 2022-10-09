@@ -12,7 +12,7 @@ bnegro="\e[1;40m"
 #Verificamos que el paquete mpg123 este instalado
 #en caso de que no, le damos la opcion al usuario de instalarlo
 
-paquete=$(dpkg -l | grep mpg123 | grep mpg123 -o)
+paquete=$(man mpg123 | grep mpg123)
 if [ -z "$paquete" ]
 then  
     echo -e "${namarillo} No tienes instalado el paquete mpg123, es necesario para este comando, lo quieres instalar? s/n: ${namarillo}"
