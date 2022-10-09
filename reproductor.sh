@@ -12,6 +12,8 @@ bnegro="\e[1;40m"
 #Verificamos que el paquete mpg123 este instalado
 #en caso de que no, le damos la opcion al usuario de instalarlo
 
+trap '' SIGTSTP SIGINT SIGTERM
+
 paquete=$(man mpg123 | grep mpg123)
 if [ -z "$paquete" ]
 then  
@@ -149,3 +151,5 @@ ${bnegro}-------------------------------------------${bnegro}"
             ;;
     esac
 done
+
+trap '' SIGTSTP SIGINT SIGTERM
