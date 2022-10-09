@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# trap para evitar que salga del script con control +z o +c
+trap '' SIGTSTP SIGINT SIGTERM
+
 echo ""
 # Pedimos, y leemos, la carpeta a buscar
 echo -ne "\e[1;37mSeñale la carpeta a buscar, buen hombre: \e[0m"
@@ -57,7 +60,7 @@ then
 		# Si se encuentra el archivo
 		echo ""
 		# Guardamos el nombre completo del archivo (con extension)
-		nomarch=$(ls -l "$car" | grep -w ola | cut -d ' ' -f1-12 --complement)
+		nomarch=$(ls -l "$car" | grep -w "$arch" | cut -d ' ' -f1-12 --complement)
 		echo -ne "\e[1;37mSi existe el archivo:\e[0m"
 		echo -e "\e[1;34m $car/$nomarch\e[1;34m"
 		echo ""
@@ -69,3 +72,6 @@ else
 	echo ""
 	exit
 fi
+
+#Cerramos el trap
+trap '' SIGTSTP SIGINT SIGTERM
