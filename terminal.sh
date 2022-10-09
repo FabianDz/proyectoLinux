@@ -68,7 +68,7 @@ opc=()
 			;;
 		"musica") #Reproductor mp3
 			#Usamos diror para ejecutar sin importar donde estemos
-			echo "musica"
+			. "$diror/"reproductor.sh
 			;;
 		*) #Cualquier otra cosa o comando de Linux
 			$opc
