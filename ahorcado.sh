@@ -1,4 +1,5 @@
  #!/bin/bash
+trap '' SIGTSTP SIGINT SIGTERM
 '  
     _____
     |   \|
@@ -131,3 +132,4 @@ echo "2)salir"
     esac
 echo "Adios, espero que vuelvas pronto  :(:"
 done
+trap '' SIGTSTP SIGINT SIGTERM
